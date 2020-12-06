@@ -117,8 +117,13 @@
               "devServerTarget": "angularCRUD:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angularCRUD"
 }

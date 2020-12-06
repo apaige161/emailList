@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+
+<form [formGroup]="form" (ngSubmit) ="submit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input [(ngModel)]="user.name" type="text" class="form-control"
+            formControlName="username">
+        <!-- validation -->
+        <div *ngIf="form.controls.username.touched && !form.controls.username.valid" class="alert alert-danger" >
+            Username is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input [(ngModel)]="user.email" type="text" class="form-control"
+            formControlName="email">
+        <!-- validation -->
+        <div *ngIf="form.controls.email.touched && form.controls.email.errors" class="alert alert-danger" >
+            Email is required
+        </div>
+    </div>
+
+    <button [disabled]="!form.valid" class="btn btn-primary" type="submit">{{title}}</button>
+</form>
